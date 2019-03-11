@@ -460,7 +460,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
   HAL_GPIO_Init(GPIOF, &GPIO_Init_Structure);
 
   /* LTDC pins configuraiton: PG6 -- 11 */
-  GPIO_Init_Structure.Pin = GPIO_PIN_6 | GPIO_PIN_7 | \
+  GPIO_Init_Structure.Pin =  GPIO_PIN_7 | \
                              GPIO_PIN_11;
   HAL_GPIO_Init(GPIOG, &GPIO_Init_Structure);
 
