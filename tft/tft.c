@@ -423,6 +423,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
   /* Enable the LTDC Clock */
   __HAL_RCC_LTDC_CLK_ENABLE();
 
+#if 0
   /* Enable GPIOs clock */
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -472,7 +473,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
   /* LTDC pins configuraiton: PG10 -- 12 */
   GPIO_Init_Structure.Pin = GPIO_PIN_10 | GPIO_PIN_12;
   HAL_GPIO_Init(GPIOG, &GPIO_Init_Structure);
-
+#endif
   /* Set LTDC Interrupt to the lowest priority */
   HAL_NVIC_SetPriority(LTDC_IRQn, 0x5, 0);
 
@@ -633,6 +634,7 @@ static void SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM
   */
 void HAL_SDRAM_MspInit(SDRAM_HandleTypeDef *hsdram)
 {
+#if 0
   GPIO_InitTypeDef  gpio_init_structure;
 
   /*##-1- Enable peripherals and GPIO Clocks #################################*/
@@ -696,6 +698,7 @@ void HAL_SDRAM_MspInit(SDRAM_HandleTypeDef *hsdram)
   gpio_init_structure.Pin   = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 |\
 							  GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_9 | GPIO_PIN_10;
   HAL_GPIO_Init(GPIOI, &gpio_init_structure);
+#endif
 }
 
 /**
@@ -708,6 +711,7 @@ void HAL_SDRAM_MspInit(SDRAM_HandleTypeDef *hsdram)
   */
 void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef *hsdram)
 {
+#if 0
 
   HAL_GPIO_DeInit(GPIOC, GPIO_PIN_0);
 
@@ -737,6 +741,7 @@ void HAL_SDRAM_MspDeInit(SDRAM_HandleTypeDef *hsdram)
 		  	  	  	  	 GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5 |\
 						 GPIO_PIN_6 | GPIO_PIN_7 | GPIO_PIN_9 |\
 						 GPIO_PIN_10);
+#endif
 }
 
 #endif
